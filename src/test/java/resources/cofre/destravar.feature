@@ -1,7 +1,9 @@
 #language: en
 
 Feature: Destravar
-    Eu como usuário desejo usar a senha para destravar o cofre
+    Como usuário 
+    desejo usar a senha 
+    para destravar o cofre
 
     Scenario: inserir senha invalida 
         Given a senha salva e 654321
