@@ -2,24 +2,20 @@ package cofre;
 
 import static cofre.ValidacaoHelper.*;
 
-/**
- *
- * @author andreendo
- */
 public class CofrePM {
     private String display;
     private SensorPorta sensorPorta;
     private Memoria memoria;
     public static int OK = 99;
 
-    public CofrePM(SensorPorta sensorPorta, Memoria memoria) {
+    CofrePM(SensorPorta sensorPorta, Memoria memoria) {
         this.sensorPorta = sensorPorta;
         this.memoria = memoria;
         display = "Entre com a senha 6 digitos";
         this.sensorPorta.destravar();
     }
     
-    public String getDisplay() {
+    String getDisplay() {
         return display;
     }
 
@@ -27,7 +23,7 @@ public class CofrePM {
         this.display = display;
     }
     
-    public void ok() {
+    void ok() {
         if(! sensorPorta.fechada())
             display = "Feche a porta antes de digitar a senha";
         else {
@@ -58,11 +54,11 @@ public class CofrePM {
             display = "senha errada. Tente novamente";
     }
     
-    public void clear() {
+    void clear() {
         display = "";
     }
     
-    public void pressButton(int codigo) {
+    void pressButton(int codigo) {
         if(! sensorPorta.fechada())
             display = "Feche a porta antes de digitar a senha";
         else {

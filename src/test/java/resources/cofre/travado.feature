@@ -1,16 +1,21 @@
 #language: en
 
-Feature: Destravar
+Feature: Travado
     Como usuário 
     desejo usar a senha 
     para destravar o cofre
 
     Scenario: inserir senha invalida 
-        Given a senha salva e 654321
-        And digitei a senha 312312
-        When pressionei entrar 
-        Then a mensagem deve ser "senha errada. Tente novamente."
-        And a porta continua fechada
+        Given a senha salva e "654321"
+        And digitei 3
+        And digitei 1
+        And digitei 2
+        And digitei 3
+        And digitei 1
+        And digitei 2
+        When pressionei o botao salvar
+        Then deve exibir "senha errada. Tente novamente."
+        And porta deve estar fechada
 
     Scenario: inserir senha com menos de 6 digitos
         Given a senha salva e 123456
