@@ -1,7 +1,6 @@
 package cofre;
 
-import cofre.CofrePMTest;
-import cucumber.api.CucumberOptions;
+import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -10,7 +9,6 @@ import cucumber.api.java.en.When;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-@CucumberOptions(features = {"Destravado"})
 public class DestravadoSteps extends CofrePMTest {
 
     @Then("^deve exibir \"([^\"]*)\"$")

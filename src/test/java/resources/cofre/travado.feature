@@ -7,44 +7,59 @@ Feature: Travado
 
     Scenario: inserir senha invalida 
         Given a senha salva e "654321"
-        And digitei 3
-        And digitei 1
-        And digitei 2
-        And digitei 3
-        And digitei 1
-        And digitei 2
-        When pressionei o botao salvar
-        Then deve exibir "senha errada. Tente novamente."
-        And porta deve estar fechada
+        And porta esta fechada
+        And porta esta travada
+        And entrei 3
+        And entrei 1
+        And entrei 2
+        And entrei 3
+        And entrei 1
+        And entrei 2
+        When apertei o botao salvar
+        Then deve mostrar "senha errada. Tente novamente"
 
     Scenario: inserir senha com menos de 6 digitos
-        Given a senha salva e 123456
-        And digitei a senha 12345
-        When pressionei entrar
-        Then a mensagem deve ser "senha errada. Tente novamente."
-        And a porta continua fechada
+        Given a senha salva e "123456"
+        And porta esta fechada
+        And porta esta travada
+        And entrei 1
+        And entrei 2
+        And entrei 3
+        And entrei 4
+        And entrei 5
+        When apertei o botao salvar
+        Then deve mostrar "senha errada. Tente novamente"
 
     Scenario: inserir senha correta
-        Given a senha salva e 123456
-        And digitei a senha 123456
-        When pressionei entrar
-        Then a mensagem deve ser "senha correta. Cofre aberto"
-        And a porta esta aberta 
+        Given a senha salva e "123456"
+        And porta esta fechada
+        And porta esta travada
+        And entrei 1
+        And entrei 2
+        And entrei 3
+        And entrei 4
+        And entrei 5
+        And entrei 6
+        When apertei o botao salvar
+        Then deve mostrar "senha correta. Cofre aberto"
 
     Scenario: inserir senha em branco
-        Given a senha salva e 123456
-        And digitei a senha ""
-        When pressionei entrar
-        Then a mensagem deve ser "senha errada. Tente novamente."
-        And a porta esta aberta 
+        Given a senha salva e "123456"
+        And porta esta fechada
+        And porta esta travada
+        When apertei o botao salvar
+        Then deve mostrar "senha errada. Tente novamente"
 
     Scenario: inserir senha com mais de 6 digitos
-        Given a senha salva e 123456
-        And digitei a senha 123456789
-        When pressionei entrar
-        Then a mensagem deve ser "senha errada. Tente novamente."
-        And a porta continua fechada
-        
-
-        
-        
+        Given a senha salva e "123456"
+        And porta esta fechada
+        And porta esta travada
+        And entrei 1
+        And entrei 2
+        And entrei 3
+        And entrei 4
+        And entrei 5
+        And entrei 5
+        And entrei 7
+        When apertei o botao salvar
+        Then deve mostrar "senha errada. Tente novamente"
