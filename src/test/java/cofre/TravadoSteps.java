@@ -9,7 +9,6 @@ import cucumber.api.java.en.When;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.when;
 
-@CucumberOptions(glue = "classpath:/resources/cofre/travado/travado.feature")
 public class TravadoSteps extends CofrePMTest {
 
     @Given("^a senha salva e \"([^\"]*)\"$")
